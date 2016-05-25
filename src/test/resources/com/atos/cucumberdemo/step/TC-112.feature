@@ -36,4 +36,4 @@ Scenario Outline: verify whether the check-out date field accepts a later date t
 Examples:
   | Location | Hotels       | Roomtype | NumberRooms | AdultsPerRoom |
   |Sydney    |Hotel Creek   |Standard  |1            |1              |
-  |London    |Hotel Sunshine|Double    |2            |3              |
+  |London    |Hotel Sunshine|Double    |3            |3              |

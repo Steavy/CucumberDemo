@@ -1,6 +1,6 @@
 Feature: TC-112
 
-  TC -102
+  TC -112
   To verify whether the check-out date field accepts a later date than check-in date.
   1. Launch hotel reservation application using URL as in test data.
   2. Login to the application using username and password as in test data.
@@ -21,19 +21,22 @@ Feature: TC-112
   Checkout date:today +5 date
   System should report an error message.
 
-Scenario Outline: verify whether the check-out date field accepts a later date than check-in date
-  Given I am on the adactin site
-  And I log in with my credentials
-  And I am logged in
-  When I set the location to "<Location>"
-  And I select Hotel "<Hotels>"
-  And I select Room type "<Roomtype>"
-  And I select the number of rooms "<NumberRooms>"
-  And I select the amount of adults "<AdultsPerRoom>"
-  And the day that I check in is "7" days from now
-  And the day that I check out is "5" days from now
-  Then the search results in an error message
-Examples:
-  | Location | Hotels       | Roomtype | NumberRooms | AdultsPerRoom |
-  |Sydney    |Hotel Creek   |Standard  |1            |1              |
-  |London    |Hotel Sunshine|Double    |3            |3              |
+  Scenario Outline: verify whether the check-out date field accepts a later date than check-in date
+    Given I am on the adactin site
+    And I log in with my credentials
+    And I am logged in
+    When I set the location to "<Location>"
+    And I select Hotel "<Hotels>"
+    And I select Room type "<Roomtype>"
+    And I select the number of rooms "<NumberRooms>"
+    And I select the amount of adults "<AdultsPerRoom>"
+    And the day that I check in is "7" days from now
+    And the day that I check out is "5" days from now
+    Then the search results in an error message
+    Examples:
+      | Location  | Hotels         | Roomtype | NumberRooms | AdultsPerRoom |
+      | Sydney    | Hotel Creek    | Standard | 1           | 1             |
+      | London    | Hotel Sunshine | Double   | 3           | 3             |
+      | Gorredijk | Hotel Geentijd | Triple   | 4           | 5             |
+
+

@@ -14,12 +14,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.53.0</version>
+            <version>3.0.1</version>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java8</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -45,6 +45,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
+        <!--       <dependency>
+                   <groupId>webdriver.gecko.driver</groupId>
+                   <artifactId>gecko</artifactId>
+                   <version>1.1.4</version>
+               </dependency> -->
     </dependencies>
     <build>
         <plugins>

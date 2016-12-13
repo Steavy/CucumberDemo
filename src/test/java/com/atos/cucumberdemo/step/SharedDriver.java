@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -48,7 +49,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
         static {
             String browserName = System.getProperty("browser");
             if(browserName == null) {
-                browserName = "chrome";
+                browserName = "phantomjs";
             }
             if(browserName.equals("firefox")) {
                 REAL_DRIVER = new FirefoxDriver();
@@ -60,6 +61,15 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
                 }
                 System.setProperty("webdriver.chrome.driver", pathToDriver);
                 REAL_DRIVER = new ChromeDriver();
+            }
+
+            else if(browserName.equals("phantomjs")) {
+                String pathToDriver = System.getProperty("pathToDriver");
+                if(pathToDriver == null) {
+                    pathToDriver = "C://driver//phantomjs.exe";
+                }
+                System.setProperty("webdriver.phantomjs.driver", pathToDriver);
+                REAL_DRIVER = new PhantomJSDriver();
             }
             else if(browserName.equals("internetExplorer")) {
                 REAL_DRIVER = new InternetExplorerDriver();
